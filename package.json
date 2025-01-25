@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "@tailwindcss/postcss": "^4.0.0",
+    "@tailwindcss/vite": "^4.0.0",
     "@wix/blog": "^1.0.323",
     "@wix/crm": "^1.0.161",
     "@wix/dashboard": "^1.3.21",
@@ -12,7 +14,10 @@
     "@wix/sdk": "^1.14.2",
     "@wix/site-realtime": "^1.12.0",
     "@wix/stores": "^1.0.281",
-    "@wix/wix-ui-icons-common": "^3.0.0"
+    "@wix/wix-ui-icons-common": "^3.0.0",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.5.1",
+    "tailwindcss": "^4.0.0"
   },
   "devDependencies": {
     "@types/react": "^16.0.0",

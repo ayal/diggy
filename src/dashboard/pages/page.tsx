@@ -1,16 +1,16 @@
 import React, { useEffect, useState, type FC } from 'react';
 import { dashboard } from '@wix/dashboard';
+import "./styles.global.css";
+
 import {
   Button,
   EmptyState,
-  Image,
   Page,
   TextButton,
   WixDesignSystemProvider,
 } from '@wix/design-system';
 import '@wix/design-system/styles.global.css';
 import * as Icons from '@wix/wix-ui-icons-common';
-import wixLogo from './wix_logo.svg';
 import ErrorBoundary from './ErrorBoundary';
 import { items, collections } from '@wix/data';
 
@@ -22,7 +22,6 @@ const PageBody = () => {
     const counterItems = await items.queryDataItems({ dataCollectionId: 'counter' }).find();
     const counterItem = counterItems.items[0];
     
-    // update the counter in the data collection
     await items.saveDataItem({
       dataItem: {
         _id: counterItem?._id,
@@ -30,15 +29,13 @@ const PageBody = () => {
       },
       dataCollectionId: 'counter',
     });
-    
-  }
+  };
+
   const decrementCounter = async () => {
     setCounter(counter - 1);
-    
     const counterItems = await items.queryDataItems({ dataCollectionId: 'counter' }).find();
     const counterItem = counterItems.items[0];
 
-    // update the counter in the data collection
     await items.saveDataItem({
       dataItem: {
         _id: counterItem?._id,
@@ -46,23 +43,17 @@ const PageBody = () => {
       },
       dataCollectionId: 'counter',
     });
-    
-  }
+  };
 
   useEffect(() => {
-
     (async () => {
-      // make sure the "counter" collection exists
       try {
-        const id = await collections.createDataCollection({
+        await collections.createDataCollection({
           displayName: 'Counter',
           _id: 'counter',
         });
-      }
-      catch (error) {
-      }
+      } catch (error) {}
 
-      // get the current value of the counter:
       const responseItems = await items.queryDataItems({ dataCollectionId: 'counter' }).find();
       if (responseItems.length > 0) {
         setCounter(responseItems.items[0].data?.counter);
@@ -71,32 +62,21 @@ const PageBody = () => {
   }, []);
 
   return (
-    <div>
-      <EmptyState
-        image={
-          <Image fit="contain" height="100px" src={wixLogo} transparent />
-        }
-        title="Start editing this dashboard page"
-        subtitle="Learn how to work with dashboard pages and how to add functionality to them using Wix APIs."
-        theme="page"
-      >
-        <TextButton
-          as="a"
-          href="https://dev.wix.com/docs/build-apps/develop-your-app/frameworks/wix-cli/supported-extensions/dashboard-extensions/dashboard-pages/add-dashboard-page-extensions-with-the-cli#add-dashboard-page-extensions-with-the-cli"
-          target="_blank"
-          prefixIcon={<Icons.ExternalLink />}
-        >
-          Dashboard pages documentation
-        </TextButton>
-      </EmptyState>
-      <div style={{ marginTop: '20px', textAlign: 'center' }}>
-        <h3>Counter: {counter}</h3>
-        <Button onClick={incrementCounter} style={{ marginRight: '10px' }}>
-          Increment
-        </Button>
-        <Button onClick={decrementCounter}>
-          Decrement
-        </Button>
+    <div className="page-body">
+      <div className="counter-card">
+        <h3 className="counter-title">Counter: {counter}</h3>
+        <div className="button-group">
+          <button 
+            className="counterIncrement"
+            onClick={incrementCounter}>
+            Increment
+          </button>
+          <button 
+            className="counterDecrement"
+            onClick={decrementCounter}>
+            Decrement
+          </button>
+        </div>
       </div>
     </div>
   );
@@ -108,8 +88,8 @@ const Index: FC = () => {
       <ErrorBoundary>
         <Page>
           <Page.Header
-            title="Dashboard Page"
-            subtitle="Add management capabilities to your app."
+            title="Counter Management Dashboard"
+            subtitle="Track and manage your counter values efficiently."
             actionsBar={
               <Button
                 onClick={() => {
