@@ -3,25 +3,3 @@
 .page-body {
   @apply p-6;
 }
-
-.counter-card {
-  @apply bg-white shadow-md rounded-lg p-6 text-center;
-  max-width: 400px;
-  margin: 20px auto;
-}
-
-.counter-title {
-  @apply text-2xl font-bold mb-4;
-}
-
-.button-group {
-  @apply flex justify-center gap-4;
-}
-
-.counterIncrement {
-  @apply bg-green-500 text-white font-bold py-2 px-4 rounded cursor-pointer transition-transform transform hover:scale-105;
-}
-
-.counterDecrement {
-  @apply bg-red-500 text-white font-bold py-2 px-4 rounded cursor-pointer transition-transform transform hover:scale-105;
-}
