@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@wix/data": "1.0.175"
+    "@wix/data": "1.0.175",
+    "@wix/design-system": "^1.171.0",
+    "@wix/wix-ui-icons-common": "^3.66.0"
   },
   "devDependencies": {
     "@types/react": "^16.0.0",
