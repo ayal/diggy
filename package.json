@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@wix/data": "^1.0.179",
+    "@wix/data": "1.0.175",
     "@wix/design-system": "^1.0.0",
     "@wix/wix-ui-icons-common": "^3.0.0",
     "autoprefixer": "^10.4.20",
