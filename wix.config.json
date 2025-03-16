@@ -1,5 +1,5 @@
 {
   "$schema": "https://dev.wix.com/wix-cli/schemas/wix-config.json",
-  "appId": "94b3d232-65c1-49e5-9b07-a680c319f109",
+  "appId": "<%= devCenter.appId %>",
   "projectId": "diggy"
 }
