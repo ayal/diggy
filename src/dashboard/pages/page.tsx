@@ -1,5 +1,4 @@
 import React, { useEffect, useState, type FC } from 'react';
-import { dashboard } from '@wix/dashboard';
 import "./styles.global.css";
 
 import {
