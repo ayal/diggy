@@ -3,12 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@wix/data": "1.0.175",
-    "@wix/design-system": "^1.0.0",
-    "@wix/wix-ui-icons-common": "^3.0.0",
-    "autoprefixer": "^10.4.20",
-    "postcss": "^8.5.1",
-    "tailwindcss": "^4.0.0"
+    "@wix/data": "1.0.175"
   },
   "devDependencies": {
     "@types/react": "^16.0.0",

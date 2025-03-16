@@ -1,5 +1,0 @@
-@import "tailwindcss";
-
-.page-body {
-  @apply p-6;
-}
