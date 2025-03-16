@@ -1,5 +1,4 @@
 import React, { useEffect, useState, type FC } from 'react';
-import "./styles.global.css";
 
 import {
   Button,
